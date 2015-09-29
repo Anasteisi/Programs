@@ -9,7 +9,7 @@ int main()
 	srand(time(NULL));
 
 	{int n;
-	cout << "Введите количество элементов:" << endl;
+	cout << "Vvedite kolichestvo elementov:" << endl;
 	cin >> n;//kolichextvo elementov v massive
 	int *x = new int[n];//massiv
 	double sum = 0;//summa elementov
@@ -19,11 +19,11 @@ int main()
 		cout << x[i] << endl;
 		sum = sum + x[i];
 	}
-	cout << "Среднее арифметическое:" << sum / n << endl;
+	cout << "Srednee arifmeticheskoe:" << sum / n << endl;
 	delete[]x;}
 
 	{int n;
-	cout << "Введите количество элементов:" << endl;
+	cout << "Vvedite kolichestvo elementov:" << endl;
 	cin >> n;//kolichextvo elementov v massive
 	int *x = new int[n];//massiv
 	double sum = 0;//summa elementov
@@ -33,11 +33,11 @@ int main()
 		cout << x[i] << endl;
 		sum = sum + x[i];
 	}
-	cout << "Среднее арифметическое:" << sum / n << endl;
+	cout << "Srednee arifmeticheskoe:" << sum / n << endl;
 	delete[]x;}
 
 	{int n;
-	cout << "Введите количество элементов:" << endl;
+	cout << "Vvedite kolichestvo elementov:" << endl;
 	cin >> n;//kolichextvo elementov v massive
 	int *x = new int[n];//massiv
 	double sum = 0;//summa elementov
@@ -47,7 +47,7 @@ int main()
 		cout << x[i] << endl;
 		sum = sum + x[i];
 	}
-	cout << "Среднее арифметическое:" << sum / n << endl;
+	cout << "Srednee arifmeticheskoe:" << sum / n << endl;
 	delete[]x;}
 
 	system("pause");
