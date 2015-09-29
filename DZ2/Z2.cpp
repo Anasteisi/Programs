@@ -11,9 +11,9 @@ int main()
 	double &y = x; //vtoroe imya x
 	double s = 0; //summa
 
-	cout << "¬ведите x" << endl;
+	cout << "Vvedite x" << endl;
 	cin >> x;
-	cout << "¬ведите n" << endl;
+	cout << "Vvedite n" << endl;
 	cin >> n;
 
 	for (int i = 0; i < n; ++i)
