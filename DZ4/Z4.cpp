@@ -21,8 +21,8 @@ int main()
 		{
 			cout << "Vvedite tochnost' vychisleniy" << endl;
 			cin >> eps;//|ocerednoe slagaemoe|
-			if ((eps < 0) || (eps > 1))
-				cout << "Oshibka!" << endl;//0<=eps<=1
+			if ((eps < 0) || (eps == 0) || (eps > 1))
+				cout << "Oshibka!" << endl;//0<eps<=1
 			else
 			{
 				cout << "Vvedite shag" << endl;
