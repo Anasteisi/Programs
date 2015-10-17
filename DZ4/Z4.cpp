@@ -29,9 +29,8 @@ int main()
 				cin >> dx;//shag x
 				cout << "x" << "\t" << "y" << endl;
 
-				while (x1 < (x2 - dx))//(x1;x2)
+				while ((x1 < x2) || (x1 = x2))//(x1;x2]
 				{
-					x1 = x1 + dx;//shag
 					double a = 0;//osherednoe slagaemoe
 					double sum = 0;//summa vseh chlenov do eps vkl
 					int n = 0;//schetchik
