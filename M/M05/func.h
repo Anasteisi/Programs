@@ -1,0 +1,1 @@
+void krnol(int**, int, int, int);

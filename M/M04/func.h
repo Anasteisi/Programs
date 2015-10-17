@@ -1,0 +1,1 @@
+void sedlovtoch(int**, int, int);
