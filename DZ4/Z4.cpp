@@ -42,6 +42,7 @@ int main()
 							a = (pow(-1, n)*pow((x1 - 1), (n + 1))) / (n + 1);//ocherednoe slagaemoe
 					}
 					cout << x1 << "\t" << sum << endl;
+					x1 = x1 + dx;//shag
 				}
 			}
 		}
