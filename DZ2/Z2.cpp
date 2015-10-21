@@ -8,7 +8,6 @@ int main()
 	setlocale(LC_ALL, "RUS");
 
 	double x, n;
-	double &y = x; //vtoroe imya x
 	double s = 0; //summa
 
 	cout << "Vvedite x: " << endl;
@@ -18,8 +17,8 @@ int main()
 
 	for (int i = 0; i < n; ++i)
 	{
-		y = sin(x);//y=x=sin(x);y=x=sin(sin(x));...
-		s = s + y;//sin(x)+sin(sin(x))+...
+		x = sin(x);//x=sin(x); x=sin(sin(x));...
+		s = s + x;//sin(x)+sin(sin(x))+...
 	}
 
 	cout << "S=" << s << endl;
