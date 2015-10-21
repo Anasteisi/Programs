@@ -16,7 +16,7 @@ int main()
 	cout << "Vvedite ezhegodnuyu pribyl'" << endl;
 	cin >> r;//pribyl'
 
-	if ((k*p > r) || (k*p == r))
+	if (k*p >= r)
 	cout << "Kredit vyplatit' nevozmozhno." << endl;//pribyl' men'she ili ravna summe procentov za 1 god ==> dolg ne bydet umen'shat'sya
 	else
 	{
@@ -24,7 +24,7 @@ int main()
 
 		while (k>0)
 		{
-			k = k + k*p - r;//summa kredita + procenty za kazhdyi god
+			k += k*p - r;//summa kredita + procenty za kazhdyi god
 			i++;//+god
 		}
 

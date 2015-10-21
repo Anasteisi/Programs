@@ -15,7 +15,7 @@ int main()
 	{
 		double a = 1, i = 0, pp = 0; //a - |ocherednoe slagaemoe|, b - schetchik, pp=0,25pi
 
-		while ((abs(a) > n) || (abs(a) == n))
+		while (abs(a) >= n)
 		{
 			pp = pp + (pow(-1, i)) * a; //(-1)^i =+-1 (i chet/nechet), -1^0=1
 			a = 1 / (2 * (i + 1) + 1); //|ocherendoe slagaemoe|
