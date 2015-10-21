@@ -17,17 +17,14 @@ int main(int argc, char** argv)
 	p = atoi(argv[4]);//p -- kolichestvo stolbcov matr2
 
 	int **matr1 = new int *[m];
-
 	for (int i = 0; i < m; ++i)
 	{
 		matr1[i] = new int[n];//pervaya matrica m*n
-
 		for (int j = 0; j < n; ++j)
 			matr1[i][j] = rand() % 10;//zapolnenie massiva
 	}
 
 	int **matr2 = new int *[o];
-
 	for (int i = 0; i < o; ++i)
 	{
 		matr2[i] = new int[p];//vtoraya matrica o*p
@@ -35,11 +32,20 @@ int main(int argc, char** argv)
 			matr2[i][j] = rand() % 10;//zapolnenie massiva
 	}
 
+	int **trmat = new int *[n];//matr1^t n*m
+	for (int i = 0; i < n; ++i)
+		trmat[i] = new int[m];
+
+	int **matr12 = new int *[m];//matr1*matr2 m*p
+	for (int i = 0; i < m; ++i)
+		matr12[i] = new int[p];
+
 	cout << "Matrica 1: \n" << endl;
 	printm(matr1, m, n);
 
 	cout << "Transponirovannaya matrica 1: \n" << endl;
-	transp(matr1, m, n);
+	transp(matr1, trmat, m, n);
+	printm(trmat, n, m);
 
 	cout << "Matrica 2: \n" << endl;
 	printm(matr2, o, p);
@@ -49,16 +55,25 @@ int main(int argc, char** argv)
 	else
 	{
 		cout << "Matrica 1 * Matrica 2: \n" << endl;
-		proizvmatrs(matr1, matr2, m, n, p);
+		proizvmatrs(matr1, matr2, matr12, m, n, p);
+		printm(matr12, m, p);
 	}
 
 	for (int i = 0; i < m; ++i)
 		delete[] matr1[i];
 	delete[]matr1;//ochistka pamyati
 
-	for (int i = 0; i < n; ++i)
+	for (int i = 0; i < o; ++i)
 		delete[] matr2[i];
 	delete[]matr2;//ochistka pamyati
+
+	for (int i = 0; i < n; ++i)
+		delete[] trmat[i];
+	delete[]trmat;//ochistka pamyati
+
+	for (int i = 0; i < m; ++i)
+		delete[] matr12[i];
+	delete[]matr12;//ochistka pamyati
 
 	system("pause");
 	return 0;
