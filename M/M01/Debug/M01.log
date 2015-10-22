@@ -1,0 +1,17 @@
+﻿Сборка начата 17.10.2015 16:07:12.
+     1>Проект "C:\Users\Anasteisi91\Desktop\Всякое\OP\M\M01\M01.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt func.cpp gauss.cpp
+         gauss.cpp
+     1>c:\users\anasteisi91\desktop\всякое\op\m\m01\gauss.cpp(11): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+         func.cpp
+         Создание кода...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Anasteisi91\Desktop\Всякое\OP\M\M01\Debug\M01.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Anasteisi91\Desktop\Всякое\OP\M\M01\Debug\M01.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Anasteisi91\Desktop\Всякое\OP\M\M01\Debug\M01.lib" /MACHINE:X86 Debug\func.obj
+         Debug\gauss.obj
+         M01.vcxproj -> C:\Users\Anasteisi91\Desktop\Всякое\OP\M\M01\Debug\M01.exe
+     1>Сборка проекта "C:\Users\Anasteisi91\Desktop\Всякое\OP\M\M01\M01.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+
+Затраченное время: 00:00:03.37
