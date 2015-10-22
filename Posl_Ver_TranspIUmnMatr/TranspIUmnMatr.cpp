@@ -32,21 +32,21 @@ int main(int argc, char** argv)
 			matr2[i][j] = rand() % 10;//zapolnenie massiva
 	}
 
-	cout << "Матрица 1: \n" << endl;
+	cout << "Matrica 1: \n" << endl;
 	printm(matr1, m, n);
 
-	cout << "Транспонированная матрица 1: \n" << endl;
+	cout << "Transponirovannaya Matrica 1: \n" << endl;
 	int** trmat = transp(matr1, m, n);
 	printm(trmat, n, m);
 
-	cout << "Матрица 2: \n" << endl;
+	cout << "Matrica 2: \n" << endl;
 	printm(matr2, o, p);
 
 	if (n != o)
-		cout << "Матрицу 1 невозможно умножить на матрицу 2!" << endl;//kol-vo stb matr1 != kol-vu srt matr2
+		cout << "Matricu 1 nevozmozhno umnozhit' na Matricu 2!" << endl;//kol-vo stb matr1 != kol-vu srt matr2
 	else
 	{
-		cout << "Матрица 1 * Матрица 2: \n" << endl;
+		cout << "Matrica 1 * Matrica 2: \n" << endl;
 		int** matr12 = proizvmatrs(matr1, matr2, m, n, p);
 		printm(matr12, m, p);
 
