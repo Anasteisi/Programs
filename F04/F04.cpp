@@ -91,7 +91,7 @@ int main()
 			}
 			else
 				out << sl << " ";// ne 10, bez izmenenii
-			sl = strtok_s(NULL, " ", &context);//следующее слово
+			sl = strtok_s(NULL, " ", &context);//sledujushee slovo
 		}
 		out << endl;//novaya stroka
 	}
