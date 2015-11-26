@@ -11,20 +11,17 @@ char *arab2rim(int arab) //funkcia dlya perevoda arabskogo chisla v rimskoe
 
 	static char rim[20];//massiv dlya otveta
 
-	int m = sizeof(arabs) / sizeof(int) - 1;//kolichestvo elementov v massive arabs (schet s 0)
-	int arabmax = arabs[m];//samoe bolshoe arabskoe chislo - 1000
-	const char rimmax = rims[m][0];//1000=M
+	int n = sizeof(arabs) / sizeof(int) - 1;//kolichestvo elementov v massive arabs (schet s 0)
+	int arabmax = arabs[n];//samoe bolshoe arabskoe chislo - 1000
+	const char rimmax = rims[n][0];//1000=M
 
 	int i = 0;;//schetchik kolishestva elementov v massive-otvete
-	int n;//peremennaya dlya vybora elementa arabs/rims
 
 	while (arab>arabmax) //poka iznachal'noe chislo bolshe 1000
 	{
 		rim[i++] = rimmax;//kolichestvo tysyach*M
 		arab -= arabmax;//minus 1000
 	}
-
-	n = m;//kolichestvo elementov v massive arabs (schet s 0)
 
 	while (arab > 0)
 	{
