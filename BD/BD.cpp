@@ -175,7 +175,7 @@ void BDf(char* str, ZapisBD* BD, int i)//perevod stroki v strukturu
 	ZapolnenieBD(Familia, Imya, Otshestvo, GodR, ID, BD[i]);//zapolnenie
 }
 
-void PrintBD(ZapisBD* BD, int kstr)//vyvod bazy iz BD na ekran
+void PrintBD(ZapisBD* BD, int kstr)//vyvod bazy iz BD na konsol'
 {
 	for (int i = 0; i < kstr; i++)
 		cout << BD[i].Familia << " " << BD[i].Imya << " " << BD[i].Otshestvo << " " << BD[i].GodR << " " << BD[i].ID << endl;
@@ -190,6 +190,7 @@ void UdalZap(fstream &fileBD, ZapisBD* BD, int kstr, int keyID)//zapis v file vs
 	}
 	if (BD[kstr - 1].ID != keyID)
 		fileBD << BD[kstr - 1].Familia << " " << BD[kstr - 1].Imya << " " << BD[kstr - 1].Otshestvo << " " << BD[kstr - 1].GodR << " " << BD[kstr - 1].ID;
+
 }
 
 void ZapVF(fstream &fileBD, int kstr, char* str)//zapis' strok s konsoli v fail
@@ -217,15 +218,14 @@ void PoiskZapF(ZapisBD* BD, int kstr, char* key)//poisk zapisi v BD po familii
 	bool rez = true;
 	for (int i = 0; i < kstr; i++)
 	{
-		char* r = strstr(BD[i].Familia, key);//vhodit li key v BD[i].Familia
-		if (r != nullptr)//da
+		if (strcmp(BD[i].Familia, key) == 0)//BD[i].Familia == key
 		{
 			cout << BD[i].Familia << " " << BD[i].Imya << " " << BD[i].Otshestvo << " " << BD[i].GodR << " " << BD[i].ID << endl;
 			rez = false;
 		}
 	}
 	if (rez == true)//net takih
-					//cout << endl << "Zapis' ne naidena!" << endl << endl;
+		//cout << endl << "Zapis' ne naidena!" << endl << endl;
 		cout << endl << "Запись не найдена!" << endl << endl;
 }
 
@@ -234,15 +234,14 @@ void PoiskZapI(ZapisBD* BD, int kstr, char* key)//poisk zapisi v BD po imeni
 	bool rez = true;
 	for (int i = 0; i < kstr; i++)
 	{
-		char* r = strstr(BD[i].Imya, key);//vhodit li key v BD[i].Imya
-		if (r != nullptr)//da
+		if (strcmp(BD[i].Imya, key) == 0)
 		{
 			cout << BD[i].Familia << " " << BD[i].Imya << " " << BD[i].Otshestvo << " " << BD[i].GodR << " " << BD[i].ID << endl;
 			rez = false;
 		}
 	}
 	if (rez == true)//net takih
-					//cout << endl << "Zapis' ne naidena!" << endl << endl;
+		//cout << endl << "Zapis' ne naidena!" << endl << endl;
 		cout << endl << "Запись не найдена!" << endl << endl;
 }
 void PoiskZapO(ZapisBD* BD, int kstr, char* key)//poisk zapisi v BD po otchestvu
@@ -250,15 +249,14 @@ void PoiskZapO(ZapisBD* BD, int kstr, char* key)//poisk zapisi v BD po otchestvu
 	bool rez = true;
 	for (int i = 0; i < kstr; i++)
 	{
-		char* r = strstr(BD[i].Otshestvo, key);//vhodit li key v BD[i].Otshestvo
-		if (r != nullptr)//da
+		if (strcmp(BD[i].Otshestvo, key) == 0)
 		{
 			cout << BD[i].Familia << " " << BD[i].Imya << " " << BD[i].Otshestvo << " " << BD[i].GodR << " " << BD[i].ID << endl;
 			rez = false;
 		}
 	}
 	if (rez == true)//net takih
-					//cout << endl << "Zapis' ne naidena!" << endl << endl;
+		//cout << endl << "Zapis' ne naidena!" << endl << endl;
 		cout << endl << "Запись не найдена!" << endl << endl;
 }
 void PoiskZapGR(ZapisBD* BD, int kstr, int k)//poisk zapisi v BD po godu rozhdeniya
@@ -266,14 +264,14 @@ void PoiskZapGR(ZapisBD* BD, int kstr, int k)//poisk zapisi v BD po godu rozhden
 	bool rez = true;
 	for (int i = 0; i < kstr; i++)
 	{
-		if (BD[i].GodR == k)//da
+		if (BD[i].GodR == k)
 		{
 			cout << BD[i].Familia << " " << BD[i].Imya << " " << BD[i].Otshestvo << " " << BD[i].GodR << " " << BD[i].ID << endl;
 			rez = false;
 		}
 	}
 	if (rez == true)//net takih
-					//cout << endl << "Zapis' ne naidena!" << endl << endl;
+		//cout << endl << "Zapis' ne naidena!" << endl << endl;
 		cout << endl << "Запись не найдена!" << endl << endl;
 }
 
@@ -282,14 +280,14 @@ void PoiskZapID(ZapisBD* BD, int kstr, int k)//poisk zapisi v BD po ID
 	bool rez = true;
 	for (int i = 0; i < kstr; i++)
 	{
-		if (BD[i].ID == k)//da
+		if (BD[i].ID == k)
 		{
 			cout << BD[i].Familia << " " << BD[i].Imya << " " << BD[i].Otshestvo << " " << BD[i].GodR << " " << BD[i].ID << endl;
 			rez = false;
 		}
 	}
 	if (rez == true)//net takih
-					//cout << endl << "Zapis' ne naidena!" << endl << endl;
+		//cout << endl << "Zapis' ne naidena!" << endl << endl;
 		cout << endl << "Запись не найдена!" << endl << endl;
 }
 
