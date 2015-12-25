@@ -241,6 +241,7 @@ void PoiskZapI(ZapisBD* BD, int kstr, char* key)//poisk zapisi v BD po imeni
 		//cout << endl << "Zapis' ne naidena!" << endl << endl;
 		cout << endl << "Запись не найдена!" << endl << endl;
 }
+
 void PoiskZapO(ZapisBD* BD, int kstr, char* key)//poisk zapisi v BD po otchestvu
 {
 	bool rez = true;
@@ -257,6 +258,7 @@ void PoiskZapO(ZapisBD* BD, int kstr, char* key)//poisk zapisi v BD po otchestvu
 		//cout << endl << "Zapis' ne naidena!" << endl << endl;
 		cout << endl << "Запись не найдена!" << endl << endl;
 }
+
 void PoiskZapGR(ZapisBD* BD, int kstr, int k)//poisk zapisi v BD po godu rozhdeniya
 {
 	bool rez = true;
@@ -367,12 +369,15 @@ bool IDm(ZapisBD Zap1, ZapisBD Zap2)
 	else
 		return false;
 }
+
 void PerezapF(fstream &fileBD, char* filename, ZapisBD* BD, int kstr)//perezapis' faila
 {
 	fileBD.open(filename, ios::out);
 	ZapBDVF(fileBD, BD, kstr);
 	fileBD.close();
 }
+
+
 int main(int argc, char** argv)
 {
 	setlocale(LC_ALL, "Russian");
@@ -659,6 +664,7 @@ int main(int argc, char** argv)
 			default:
 				return 0;
 			}//do2
+			delete[]BD;//ochistka pamyati
 		}//cikl
 	}//else
 	system("pause");
