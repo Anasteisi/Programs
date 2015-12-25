@@ -70,12 +70,12 @@ void ZapolnenieBD(char* Familia, char* Imya, char* Otshestvo, int GodR, int ID, 
 
 void Menu1()
 {/*
- cout << endl << "Deistvie:" << endl;
+ cout << endl << "Glavnoe menu. Deistvie:" << endl;
  cout << "Rabota s imejusheisya bazoi -- 1" << endl;
  cout << "Sozdanie novoi bazy -- 2" << endl;
  cout << "Zavershenie programmy -- lybaya drugaya klavisha" << endl << endl;
  */
-	cout << endl << "Действие:" << endl;
+	cout << endl << "Главное меню. Действие:" << endl;
 	cout << "Работа с имеющейся базой -- 1" << endl;
 	cout << "Создание новой базы -- 2" << endl;
 	cout << "Завершение программы -- любая другая клавиша" << endl << endl;
@@ -83,7 +83,7 @@ void Menu1()
 
 void Menu2()
 {/*
- cout << endl << "Dal'neishie deistviya:" << endl;
+ cout << endl << "Menu. Dal'neishie deistviya:" << endl;
  cout << "Vyvesti bazu na ekran -- 1" << endl;
  cout << "Dobavit' novujy stroku -- 2" << endl;
  cout << "Udalit' stroku -- 3" << endl;
@@ -92,7 +92,7 @@ void Menu2()
  cout << "Glavnoe menu -- 6" << endl;
  cout << "Zavershenie programmy -- lybaya drugaya klavisha" << endl << endl;
  */
-	cout << endl << "Дальнейшие действия:" << endl;
+	cout << endl << "Меню. Дальнейшие действия:" << endl;
 	cout << "Вывести базу на экран -- 1" << endl;
 	cout << "Добавить новую строку -- 2" << endl;
 	cout << "Удалить строку -- 3" << endl;
@@ -110,7 +110,8 @@ void Menu3SP()
  cout << "Otchestvo -- 3" << endl;
  cout << "God rozhdeniya -- 4" << endl;
  cout << "ID -- 5" << endl;
- cout << "Glavnoe menu -- 6" << endl;
+ cout << "Menu -- 6" << endl;
+ cout << "Glavnoe menu -- 7" << endl;
  cout << "Zavershenie programmy -- lybaya drugaya klavisha" << endl << endl;
  */
 	cout << endl << "Выберите поле:" << endl;
@@ -119,7 +120,8 @@ void Menu3SP()
 	cout << "Отчество -- 3" << endl;
 	cout << "Год рождения -- 4" << endl;
 	cout << "ID -- 5" << endl;
-	cout << "Главное меню -- 6" << endl;
+	cout << "Меню -- 6" << endl;
+	cout << "Главное меню -- 7" << endl;
 	cout << "Завершение программы -- любая другая клавиша" << endl << endl;
 }
 
@@ -128,13 +130,15 @@ void Menu4S()
  cout << endl << "Sortirovka po:" << endl;
  cout << "Alfavitu A--Z / Vozrastaniju 1-N -- 1" << endl;
  cout << "Alfavitu Z--A / Ubyvaniju N-1 -- 2" << endl;
- cout << "Glavnoe menu -- 3" << endl;
+ cout << "Menu -- 6" << endl;
+ cout << "Glavnoe menu -- 7" << endl;
  cout << "Zavershenie programmy -- lybaya drugaya klavisha" << endl << endl;
  */
 	cout << endl << "Сортировка по" << endl;
 	cout << "Алфавиту A--Z / Возрастанию 1-N -- 1" << endl;
 	cout << "Алфавиту Z--A / Убыванию N-1 -- 2" << endl;
-	cout << "Главное меню -- 3" << endl;
+	cout << "Меню -- 3" << endl;
+	cout << "Главное меню -- 4" << endl;
 	cout << "Завершение программы -- любая другая клавиша" << endl << endl;
 }
 
@@ -221,7 +225,7 @@ void PoiskZapF(ZapisBD* BD, int kstr, char* key)//poisk zapisi v BD po familii
 		}
 	}
 	if (rez == true)//net takih
-		//cout << endl << "Zapis' ne naidena!" << endl << endl;
+					//cout << endl << "Zapis' ne naidena!" << endl << endl;
 		cout << endl << "Запись не найдена!" << endl << endl;
 }
 
@@ -238,10 +242,9 @@ void PoiskZapI(ZapisBD* BD, int kstr, char* key)//poisk zapisi v BD po imeni
 		}
 	}
 	if (rez == true)//net takih
-		//cout << endl << "Zapis' ne naidena!" << endl << endl;
+					//cout << endl << "Zapis' ne naidena!" << endl << endl;
 		cout << endl << "Запись не найдена!" << endl << endl;
 }
-
 void PoiskZapO(ZapisBD* BD, int kstr, char* key)//poisk zapisi v BD po otchestvu
 {
 	bool rez = true;
@@ -255,10 +258,9 @@ void PoiskZapO(ZapisBD* BD, int kstr, char* key)//poisk zapisi v BD po otchestvu
 		}
 	}
 	if (rez == true)//net takih
-		//cout << endl << "Zapis' ne naidena!" << endl << endl;
+					//cout << endl << "Zapis' ne naidena!" << endl << endl;
 		cout << endl << "Запись не найдена!" << endl << endl;
 }
-
 void PoiskZapGR(ZapisBD* BD, int kstr, int k)//poisk zapisi v BD po godu rozhdeniya
 {
 	bool rez = true;
@@ -271,7 +273,7 @@ void PoiskZapGR(ZapisBD* BD, int kstr, int k)//poisk zapisi v BD po godu rozhden
 		}
 	}
 	if (rez == true)//net takih
-		//cout << endl << "Zapis' ne naidena!" << endl << endl;
+					//cout << endl << "Zapis' ne naidena!" << endl << endl;
 		cout << endl << "Запись не найдена!" << endl << endl;
 }
 
@@ -287,7 +289,7 @@ void PoiskZapID(ZapisBD* BD, int kstr, int k)//poisk zapisi v BD po ID
 		}
 	}
 	if (rez == true)//net takih
-		//cout << endl << "Zapis' ne naidena!" << endl << endl;
+					//cout << endl << "Zapis' ne naidena!" << endl << endl;
 		cout << endl << "Запись не найдена!" << endl << endl;
 }
 
@@ -383,7 +385,7 @@ int main(int argc, char** argv)
 	setlocale(LC_ALL, "Russian");
 
 	char* filename = argv[1];//nazvanie faila
-	bool cikl = true;//cikl Menu
+	bool cikl1 = true;//cikl Menu1
 	int do1 = 0, do2 = 0, do3 = 0, do4 = 0;//vybor deistviya v switch
 	char str[255];//stroka BD
 	int kstr = 0;//zapisei v BD
@@ -397,8 +399,9 @@ int main(int argc, char** argv)
 	else
 	{
 		fileBD.close();//poka zakryt'
-		while (cikl = true)
+		while (cikl1 = true)
 		{
+			bool cikl2 = true;//cikl Menu2
 			Menu1();
 			cin >> do1;//deistvie v Menu1
 
@@ -409,7 +412,7 @@ int main(int argc, char** argv)
 			case 2:
 			{
 				fstream fileBD(filename, ios::out);//otkrytie faila na perezapis'
-				//cout<< endl << "Vvedite kolichestvo zapisei." << endl << endl;
+												   //cout<< endl << "Vvedite kolichestvo zapisei." << endl << endl;
 				cout << endl << "Введите количество записей." << endl << endl;
 				cin >> kstr;
 				//cout << endl << "Vvedite zapisi cherez Enter." << endl << endl;
@@ -423,249 +426,291 @@ int main(int argc, char** argv)
 				return 0;//zavershit' programmu
 			}//zakrytie switch
 
-			fstream fileBD(filename, ios::in);//otkrytie faila na chtenie
-			kstr = KolStrok(fileBD);
-			ZapisBD* BD = new ZapisBD[kstr];//massiv struktur
-			fileBD.seekg(0);//vozvrat v nachalo faila
-			for (int i = 0; i < kstr; i++)
+			while (cikl2 == true)
 			{
-				fileBD.getline(str, 255);
-				BDf(str, BD, i);//zapolnenie BD
-			}
-			fileBD.close();
+				fstream fileBD(filename, ios::in);//otkrytie faila na chtenie
+				kstr = KolStrok(fileBD);
+				ZapisBD* BD = new ZapisBD[kstr];//massiv struktur
+				fileBD.seekg(0);//vozvrat v nachalo faila
+				for (int i = 0; i < kstr; i++)
+				{
+					fileBD.getline(str, 255);
+					BDf(str, BD, i);//zapolnenie BD
+				}
+				fileBD.close();
 
-			Menu2();
-			cin >> do2;//deistvie v Menu2
-			switch (do2)
-			{
-			case 1:
-			{
-				PrintBD(BD, kstr);//vyvod na konsol'
-				break;
-			}
-			case 2:
-			{
-				fileBD.open(filename, ios::app);//otkrytie faila na dozapis'
-				//cout << endl << "Vvedite nobuju stroku." << endl << endl;
-				cout << endl << "Введите новую строку." << endl << endl;
-				ZapVF(fileBD, 2, str);//endl i stroka
-				fileBD.close();
-				break;//zavershit' switch
-			}
-			case 3:
-			{
-				fileBD.open(filename, ios::out);//otkrytie faila na perezapis'
-				int keyID = 0;//ID dlya poiska
-				//cout << endl << "Vvedite ID nuzhnoi stroki." << endl << endl;
-				cout << endl << "Введите ID нужной строки." << endl << endl;
-				cin >> keyID;
-				UdalZap(fileBD, BD, kstr, keyID);//perezapis' faila bez stroki s keyID
-				fileBD.close();
-				break;
-			}
-			case 4:
-			{
-				do3 = 0;//deistvie v Menu3
-				Menu3SP();
-				cin >> do3;
-				char key[255];//slovo dlya Menu3
-				int k = 0;//chislo dlya Menu3
-				switch (do3)
+				Menu2();
+				cin >> do2;//deistvie v Menu2
+				switch (do2)
 				{
 				case 1:
 				{
-					//cout << endl << "Vvedite Familiju." << endl << endl;
-					cout << endl << "Введите фамилию." << endl << endl;
-					cin >> key;
-					PoiskZapF(BD, kstr, key);//poisk po polu Familia
+					PrintBD(BD, kstr);//vyvod na konsol'
 					break;
 				}
 				case 2:
 				{
-					//cout << endl << "Vvedite Imya." << endl << endl;
-					cout << endl << "Введите имя." << endl << endl;
-					cin >> key;
-					PoiskZapI(BD, kstr, key);//poisk po polu Imya
-					break;
+					fileBD.open(filename, ios::app);//otkrytie faila na dozapis'
+													//cout << endl << "Vvedite nobuju stroku." << endl << endl;
+					cout << endl << "Введите новую строку." << endl << endl;
+					ZapVF(fileBD, 2, str);//endl i stroka
+					fileBD.close();
+					break;//zavershit' switch
 				}
 				case 3:
 				{
-					//cout << endl << "Vvedite Otshestvo." << endl << endl;
-					cout << endl << "Введите отчество." << endl << endl;
-					cin >> key;
-					PoiskZapO(BD, kstr, key);//poisk po polu Otshestvo
+					fileBD.open(filename, ios::out);//otkrytie faila na perezapis'
+					int keyID = 0;//ID dlya poiska
+								  //cout << endl << "Vvedite ID nuzhnoi stroki." << endl << endl;
+					cout << endl << "Введите ID нужной строки." << endl << endl;
+					cin >> keyID;
+					UdalZap(fileBD, BD, kstr, keyID);//perezapis' faila bez stroki s keyID
+					fileBD.close();
 					break;
 				}
 				case 4:
 				{
-					//cout << endl << "Vvedite god rozhdeniya" << endl << endl;
-					cout << endl << "Введите год рождения." << endl << endl;
-					cin >> k;
-					PoiskZapGR(BD, kstr, k);//poisk po polu GodR
+					do3 = 0;//deistvie v Menu3
+					Menu3SP();
+					cin >> do3;
+					char key[255];//slovo dlya Menu3
+					int k = 0;//chislo dlya Menu3
+					switch (do3)
+					{
+					case 1:
+					{
+						//cout << endl << "Vvedite Familiju." << endl << endl;
+						cout << endl << "Введите фамилию." << endl << endl;
+						cin >> key;
+						PoiskZapF(BD, kstr, key);//poisk po polu Familia
+						break;
+					}
+					case 2:
+					{
+						//cout << endl << "Vvedite Imya." << endl << endl;
+						cout << endl << "Введите имя." << endl << endl;
+						cin >> key;
+						PoiskZapI(BD, kstr, key);//poisk po polu Imya
+						break;
+					}
+					case 3:
+					{
+						//cout << endl << "Vvedite Otshestvo." << endl << endl;
+						cout << endl << "Введите отчество." << endl << endl;
+						cin >> key;
+						PoiskZapO(BD, kstr, key);//poisk po polu Otshestvo
+						break;
+					}
+					case 4:
+					{
+						//cout << endl << "Vvedite god rozhdeniya" << endl << endl;
+						cout << endl << "Введите год рождения." << endl << endl;
+						cin >> k;
+						PoiskZapGR(BD, kstr, k);//poisk po polu GodR
+						break;
+					}
+					case 5:
+					{
+						//cout << endl << "Vvedite ID" << endl << endl;
+						cout << endl << "Введите ID" << endl << endl;
+						cin >> k;
+						PoiskZapID(BD, kstr, k);//poisk po polu ID
+						break;
+					}
+					case 6:
+						break;//vozvrat v Menu2
+					case 7:
+					{
+						cikl2 = false;//vozvrat v Menu1
+						break;
+					}
+					default:
+						return 0;
+					}
 					break;
-				}
+				}//4
 				case 5:
 				{
-					//cout << endl << "Vvedite ID" << endl << endl;
-					cout << endl << "Введите ID" << endl << endl;
-					cin >> k;
-					PoiskZapID(BD, kstr, k);//poisk po polu ID
-					break;
-				}
-				case 6:
-					break;
-				default:
-					return 0;
-				}
-				break;
-			}//4
-			case 5:
-			{
-				do3 = 0;//deistvie v Menu3
-				Menu3SP();
-				cin >> do3;
+					do3 = 0;//deistvie v Menu3
+					Menu3SP();
+					cin >> do3;
 
-				switch (do3)
-				{
-				case 1:
-				{
-					do4 = 0;//deistvie v Menu4
-					Menu4S();
-					cin >> do4;
-					switch (do4)
+					switch (do3)
 					{
 					case 1:
 					{
-						Sort(BD, kstr, Famb);//sortirovka po familii A-Z
-						PerezapF(fileBD, filename, BD, kstr);//perezapis' faila
+						do4 = 0;//deistvie v Menu4
+						Menu4S();
+						cin >> do4;
+						switch (do4)
+						{
+						case 1:
+						{
+							Sort(BD, kstr, Famb);//sortirovka po familii A-Z
+							PerezapF(fileBD, filename, BD, kstr);//perezapis' faila
+							break;
+						}
+						case 2:
+						{
+							Sort(BD, kstr, Famm);//sortirovka po familii Z-A
+							PerezapF(fileBD, filename, BD, kstr);//perezapis' faila
+							break;
+						}
+						case 3:
+							break;//vozvrat v Menu2
+						case 4:
+						{
+							cikl2 = false;//vozvrat v Menu1
+							break;
+						}
+						default:
+							return 0;
+						}
 						break;
 					}
 					case 2:
 					{
-						Sort(BD, kstr, Famm);//sortirovka po familii Z-A
-						PerezapF(fileBD, filename, BD, kstr);//perezapis' faila
+						Menu4S();
+						cin >> do4;
+						switch (do4)
+						{
+						case 1:
+						{
+							Sort(BD, kstr, Imb);
+							PerezapF(fileBD, filename, BD, kstr);
+							break;
+						}
+						case 2:
+						{
+							Sort(BD, kstr, Imm);
+							PerezapF(fileBD, filename, BD, kstr);
+							break;
+						}
+						case 3:
+							break;//vozvrat v Menu2
+						case 4:
+						{
+							cikl2 = false;//vozvrat v Menu1
+							break;
+						}
+						default:
+							return 0;
+						}
 						break;
 					}
 					case 3:
+					{
+						Menu4S();
+						cin >> do4;
+						switch (do4)
+						{
+						case 1:
+						{
+							Sort(BD, kstr, Otb);
+							PerezapF(fileBD, filename, BD, kstr);
+							break;
+						}
+						case 2:
+						{
+							Sort(BD, kstr, Otm);
+							PerezapF(fileBD, filename, BD, kstr);
+							break;
+						}
+						case 3:
+							break;//vozvrat v Menu2
+						case 4:
+						{
+							cikl2 = false;//vozvrat v Menu1
+							break;
+						}
+						default:
+							return 0;
+						}
 						break;
+					}
+					case 4:
+					{
+						Menu4S();
+						cin >> do4;
+						switch (do4)
+						{
+						case 1:
+						{
+							Sort(BD, kstr, GRb);
+							PerezapF(fileBD, filename, BD, kstr);
+							break;
+						}
+						case 2:
+						{
+							Sort(BD, kstr, GRm);
+							PerezapF(fileBD, filename, BD, kstr);
+							break;
+						}
+						case 3:
+							break;//vozvrat v Menu2
+						case 4:
+						{
+							cikl2 = false;//vozvrat v Menu1
+							break;
+						}
+						default:
+							return 0;
+						}
+						break;
+					}
+					case 5:
+					{
+						Menu4S();
+						cin >> do4;
+						switch (do4)
+						{
+						case 1:
+						{
+							Sort(BD, kstr, IDb);
+							PerezapF(fileBD, filename, BD, kstr);
+							break;
+						}
+						case 2:
+						{
+							Sort(BD, kstr, IDm);
+							PerezapF(fileBD, filename, BD, kstr);
+							break;
+						}
+						case 3:
+							break;//vozvrat v Menu2
+						case 4:
+						{
+							cikl2 = false;//vozvrat v Menu1
+							break;
+						}
+						default:
+							return 0;
+						}
+						break;
+					}
+					case 6:
+						break;//vozvrat v Menu2
+					case 7:
+					{
+						cikl2 = false;//vozvrat v Menu1
+						break;
+					}
 					default:
 						return 0;
-					}
+					}//do3
 					break;
-				}
-				case 2:
-				{
-					Menu4S();
-					cin >> do4;
-					switch (do4)
-					{
-					case 1:
-					{
-						Sort(BD, kstr, Imb);
-						PerezapF(fileBD, filename, BD, kstr);
-						break;
-					}
-					case 2:
-					{
-						Sort(BD, kstr, Imm);
-						PerezapF(fileBD, filename, BD, kstr);
-						break;
-					}
-					case 3:
-						break;
-					default:
-						return 0;
-					}
-					break;
-				}
-				case 3:
-				{
-					Menu4S();
-					cin >> do4;
-					switch (do4)
-					{
-					case 1:
-					{
-						Sort(BD, kstr, Otb);
-						PerezapF(fileBD, filename, BD, kstr);
-						break;
-					}
-					case 2:
-					{
-						Sort(BD, kstr, Otm);
-						PerezapF(fileBD, filename, BD, kstr);
-						break;
-					}
-					case 3:
-						break;
-					default:
-						return 0;
-					}
-					break;
-				}
-				case 4:
-				{
-					Menu4S();
-					cin >> do4;
-					switch (do4)
-					{
-					case 1:
-					{
-						Sort(BD, kstr, GRb);
-						PerezapF(fileBD, filename, BD, kstr);
-						break;
-					}
-					case 2:
-					{
-						Sort(BD, kstr, GRm);
-						PerezapF(fileBD, filename, BD, kstr);
-						break;
-					}
-					case 3:
-						break;
-					default:
-						return 0;
-					}
-					break;
-				}
-				case 5:
-				{
-					Menu4S();
-					cin >> do4;
-					switch (do4)
-					{
-					case 1:
-					{
-						Sort(BD, kstr, IDb);
-						PerezapF(fileBD, filename, BD, kstr);
-						break;
-					}
-					case 2:
-					{
-						Sort(BD, kstr, IDm);
-						PerezapF(fileBD, filename, BD, kstr);
-						break;
-					}
-					case 3:
-						break;
-					default:
-						return 0;
-					}
-					break;
-				}
+				}//5 - sort
 				case 6:
-					break;//vozvrat v Menu1
+				{
+					cikl2 = false;//vozvrat v Menu1
+					break;
+				}
 				default:
 					return 0;
-				}//do3
-			}//5 - sort
-			case 6:
-				break;//vozvrat v Menu1
-			default:
-				return 0;
-			}//do2
-			delete[]BD;//ochistka pamyati
-		}//cikl
+				}//do2
+				delete[]BD;//ochistka pamyati
+			}//cikl2
+		}//cikl1
 	}//else
 	system("pause");
 	return 0;
