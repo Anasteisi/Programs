@@ -409,7 +409,7 @@ int main(int argc, char** argv)
 			case 2:
 			{
 				fstream fileBD(filename, ios::out);//otkrytie faila na perezapis'
-												   //cout<< endl << "Vvedite kolichestvo zapisei." << endl << endl;
+				//cout<< endl << "Vvedite kolichestvo zapisei." << endl << endl;
 				cout << endl << "¬ведите количество записей." << endl << endl;
 				cin >> kstr;
 				//cout << endl << "Vvedite zapisi cherez Enter." << endl << endl;
@@ -446,7 +446,7 @@ int main(int argc, char** argv)
 			case 2:
 			{
 				fileBD.open(filename, ios::app);//otkrytie faila na dozapis'
-												//cout << endl << "Vvedite nobuju stroku." << endl << endl;
+				//cout << endl << "Vvedite nobuju stroku." << endl << endl;
 				cout << endl << "¬ведите новую строку." << endl << endl;
 				ZapVF(fileBD, 2, str);//endl i stroka
 				fileBD.close();
@@ -456,7 +456,7 @@ int main(int argc, char** argv)
 			{
 				fileBD.open(filename, ios::out);//otkrytie faila na perezapis'
 				int keyID = 0;//ID dlya poiska
-							  //cout << endl << "Vvedite ID nuzhnoi stroki." << endl << endl;
+				//cout << endl << "Vvedite ID nuzhnoi stroki." << endl << endl;
 				cout << endl << "¬ведите ID нужной строки." << endl << endl;
 				cin >> keyID;
 				UdalZap(fileBD, BD, kstr, keyID);//perezapis' faila bez stroki s keyID
