@@ -156,8 +156,7 @@ int KolStrok(fstream &fileBD)//kolichestvo strok v faile
 	while (!fileBD.eof())//poka ne konec faila
 	{
 		fileBD.getline(str, 256);//stroka
-		if (str != "\0")
-			kstr++;
+		kstr++;
 	}
 	return kstr;
 }
@@ -439,14 +438,10 @@ int main(int argc, char** argv)
 				ZapisBD* BD = new ZapisBD[kstr];//massiv struktur
 				fileBD.seekg(0);//vozvrat v nachalo faila
 				int i = 0;
-				while (!fileBD.eof())//poka ne konec faila
+				for (int i = 0; i < kstr; i++)
 				{
 					fileBD.getline(str, 255);
-					if (str != "\0")
-					{
-						BDf(str, BD, i);//zapolnenie BD
-						i++;
-					}
+					BDf(str, BD, i);//zapolnenie BD
 				}
 				fileBD.close();
 
