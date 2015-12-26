@@ -156,7 +156,8 @@ int KolStrok(fstream &fileBD)//kolichestvo strok v faile
 	while (!fileBD.eof())//poka ne konec faila
 	{
 		fileBD.getline(str, 256);//stroka
-		kstr++;
+		if (str != "\0")
+			kstr++;
 	}
 	return kstr;
 }
@@ -183,14 +184,19 @@ void PrintBD(ZapisBD* BD, int kstr)//vyvod bazy iz BD na konsol'
 
 void UdalZap(fstream &fileBD, ZapisBD* BD, int kstr, int keyID)//zapis v file vseh zapisei iz BD, krome keyID
 {
-	for (int i = 0; i < kstr - 1; i++)
+	for (int i = 0; i < kstr - 2; i++)
 	{
 		if (BD[i].ID != keyID)
 			fileBD << BD[i].Familia << " " << BD[i].Imya << " " << BD[i].Otshestvo << " " << BD[i].GodR << " " << BD[i].ID << endl;
 	}
+
+	if (BD[kstr - 2].ID != keyID)//predposlednyja
+		if (BD[kstr - 1].ID == keyID)//poslednyaya
+			fileBD << BD[kstr - 2].Familia << " " << BD[kstr - 2].Imya << " " << BD[kstr - 2].Otshestvo << " " << BD[kstr - 2].GodR << " " << BD[kstr - 2].ID;
+		else
+			fileBD << BD[kstr - 2].Familia << " " << BD[kstr - 2].Imya << " " << BD[kstr - 2].Otshestvo << " " << BD[kstr - 2].GodR << " " << BD[kstr - 2].ID << endl;
 	if (BD[kstr - 1].ID != keyID)
 		fileBD << BD[kstr - 1].Familia << " " << BD[kstr - 1].Imya << " " << BD[kstr - 1].Otshestvo << " " << BD[kstr - 1].GodR << " " << BD[kstr - 1].ID;
-
 }
 
 void ZapVF(fstream &fileBD, int kstr, char* str)//zapis' strok s konsoli v fail
@@ -244,6 +250,7 @@ void PoiskZapI(ZapisBD* BD, int kstr, char* key)//poisk zapisi v BD po imeni
 		//cout << endl << "Zapis' ne naidena!" << endl << endl;
 		cout << endl << "Запись не найдена!" << endl << endl;
 }
+
 void PoiskZapO(ZapisBD* BD, int kstr, char* key)//poisk zapisi v BD po otchestvu
 {
 	bool rez = true;
@@ -259,6 +266,7 @@ void PoiskZapO(ZapisBD* BD, int kstr, char* key)//poisk zapisi v BD po otchestvu
 		//cout << endl << "Zapis' ne naidena!" << endl << endl;
 		cout << endl << "Запись не найдена!" << endl << endl;
 }
+
 void PoiskZapGR(ZapisBD* BD, int kstr, int k)//poisk zapisi v BD po godu rozhdeniya
 {
 	bool rez = true;
@@ -430,10 +438,15 @@ int main(int argc, char** argv)
 				kstr = KolStrok(fileBD);
 				ZapisBD* BD = new ZapisBD[kstr];//massiv struktur
 				fileBD.seekg(0);//vozvrat v nachalo faila
-				for (int i = 0; i < kstr; i++)
+				int i = 0;
+				while (!fileBD.eof())//poka ne konec faila
 				{
 					fileBD.getline(str, 255);
-					BDf(str, BD, i);//zapolnenie BD
+					if (str != "\0")
+					{
+						BDf(str, BD, i);//zapolnenie BD
+						i++;
+					}
 				}
 				fileBD.close();
 
@@ -449,7 +462,7 @@ int main(int argc, char** argv)
 				case 2:
 				{
 					fileBD.open(filename, ios::app);//otkrytie faila na dozapis'
-													//cout << endl << "Vvedite nobuju stroku." << endl << endl;
+					//cout << endl << "Vvedite nobuju stroku." << endl << endl;
 					cout << endl << "Введите новую строку." << endl << endl;
 					ZapVF(fileBD, 2, str);//endl i stroka
 					fileBD.close();
@@ -459,7 +472,7 @@ int main(int argc, char** argv)
 				{
 					fileBD.open(filename, ios::out);//otkrytie faila na perezapis'
 					int keyID = 0;//ID dlya poiska
-								  //cout << endl << "Vvedite ID nuzhnoi stroki." << endl << endl;
+					//cout << endl << "Vvedite ID nuzhnoi stroki." << endl << endl;
 					cout << endl << "Введите ID нужной строки." << endl << endl;
 					cin >> keyID;
 					UdalZap(fileBD, BD, kstr, keyID);//perezapis' faila bez stroki s keyID
