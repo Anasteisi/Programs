@@ -389,6 +389,14 @@ int main(int argc, char** argv)
 {
 	setlocale(LC_ALL, "Russian");
 
+	if (argc < 2)//tol'ko 1 argument -- imya programmy
+	{
+		//cout << "Nazvanie faila ne zadano!" << endl << endl;
+		cout << "Название файла не задано!" << endl << endl;
+		system("pause");
+		return 0;
+	}
+
 	char* filename = argv[1];//nazvanie faila
 	bool cikl1 = true;//cikl Menu1
 	int do1 = 0, do2 = 0, do3 = 0, do4 = 0;//vybor deistviya v switch
