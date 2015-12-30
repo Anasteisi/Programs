@@ -142,7 +142,7 @@ void Menu4S()
 	cout << "Завершение программы -- любая другая клавиша" << endl << endl;
 }
 
-void Sh()
+void Shapka()
 {
 	//cout << endl << "Familia Imya Otshestvo God rozhdeniya ID" << endl;
 	cout << endl << "Фамилия Имя Отчество Год рождения ID" << endl;
@@ -183,7 +183,7 @@ void BDf(char* str, ZapisBD* BD, int i)//perevod stroki v strukturu
 
 void PrintBD(ZapisBD* BD, int kstr)//vyvod bazy iz BD na konsol'
 {
-	Sh();
+	Shapka();
 	for (int i = 0; i < kstr; i++)
 		cout << BD[i].Familia << " " << BD[i].Imya << " " << BD[i].Otshestvo << " " << BD[i].GodR << " " << BD[i].ID << endl;
 }
@@ -232,8 +232,8 @@ void PoiskZapF(ZapisBD* BD, int kstr, char* key)//poisk zapisi v BD po familii
 	{
 		if (strcmp(BD[i].Familia, key) == 0)//BD[i].Familia == key
 		{
-			if (rez == true)
-				Sh();
+			if (rez == true)//pervaya zapis'
+				Shapka();
 			cout << BD[i].Familia << " " << BD[i].Imya << " " << BD[i].Otshestvo << " " << BD[i].GodR << " " << BD[i].ID << endl;
 			rez = false;
 		}
@@ -251,7 +251,7 @@ void PoiskZapI(ZapisBD* BD, int kstr, char* key)//poisk zapisi v BD po imeni
 		if (strcmp(BD[i].Imya, key) == 0)
 		{
 			if (rez == true)
-				Sh();
+				Shapka();
 			cout << BD[i].Familia << " " << BD[i].Imya << " " << BD[i].Otshestvo << " " << BD[i].GodR << " " << BD[i].ID << endl;
 			rez = false;
 		}
@@ -269,7 +269,7 @@ void PoiskZapO(ZapisBD* BD, int kstr, char* key)//poisk zapisi v BD po otchestvu
 		if (strcmp(BD[i].Otshestvo, key) == 0)
 		{
 			if (rez == true)
-				Sh();
+				Shapka();
 			cout << BD[i].Familia << " " << BD[i].Imya << " " << BD[i].Otshestvo << " " << BD[i].GodR << " " << BD[i].ID << endl;
 			rez = false;
 		}
@@ -287,7 +287,7 @@ void PoiskZapGR(ZapisBD* BD, int kstr, int k)//poisk zapisi v BD po godu rozhden
 		if (BD[i].GodR == k)
 		{
 			if (rez == true)
-				Sh();
+				Shapka();
 			cout << BD[i].Familia << " " << BD[i].Imya << " " << BD[i].Otshestvo << " " << BD[i].GodR << " " << BD[i].ID << endl;
 			rez = false;
 		}
@@ -305,7 +305,7 @@ void PoiskZapID(ZapisBD* BD, int kstr, int k)//poisk zapisi v BD po ID
 		if (BD[i].ID == k)
 		{
 			if (rez == true)
-				Sh();
+				Shapka();
 			cout << BD[i].Familia << " " << BD[i].Imya << " " << BD[i].Otshestvo << " " << BD[i].GodR << " " << BD[i].ID << endl;
 			rez = false;
 		}
@@ -447,7 +447,7 @@ int main(int argc, char** argv)
 				cin >> kstr;
 				//cout << endl << "Vvedite zapisi cherez Enter." << endl << endl;
 				cout << endl << "Введите записи через Enter." << endl << endl;
-				Sh();
+				Shapka();
 				cin.ignore();//pervaya stroka bez endl
 				ZapVF(fileBD, kstr, str);//zapis' strok s konsoli v fail
 				fileBD.close();
@@ -485,7 +485,7 @@ int main(int argc, char** argv)
 					fileBD.open(filename, ios::app);//otkrytie faila na dozapis'
 					//cout << endl << "Vvedite nobuju stroku." << endl << endl;
 					cout << endl << "Введите новую строку." << endl << endl;
-					Sh();
+					Shapka();
 					ZapVF(fileBD, 2, str);//endl i stroka
 					fileBD.close();
 					break;//zavershit' switch
@@ -503,8 +503,7 @@ int main(int argc, char** argv)
 				}
 				case 4:
 				{
-					do3 = 0;//deistvie v Menu3
-					Menu3SP();
+					Menu3SP();//deistvie v Menu3
 					cin >> do3;
 					char key[255];//slovo dlya Menu3
 					int k = 0;//chislo dlya Menu3
@@ -564,17 +563,15 @@ int main(int argc, char** argv)
 				}//4
 				case 5:
 				{
-					do3 = 0;//deistvie v Menu3
-					Menu3SP();
+					Menu3SP();//deistvie v Menu3
 					cin >> do3;
 
 					switch (do3)
 					{
 					case 1:
 					{
-						do4 = 0;//deistvie v Menu4
 						Menu4S();
-						cin >> do4;
+						cin >> do4;//deistvie v Menu4
 						switch (do4)
 						{
 						case 1:
